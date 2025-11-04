@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loop: true
         });
     }
-
+/*
     function eventListeners(){
         document.getElementById('welcome_tab').addEventListener('click', function() {
             if (activeTab != "welcome") {
@@ -68,4 +68,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
         activeTab = newActive
     }
+        */
 });

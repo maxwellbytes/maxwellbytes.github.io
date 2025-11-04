@@ -4,6 +4,19 @@
 @theme {
   --font-jetbrainsReg: JetBrainsReg;
   --font-jetbrainsBold: JetBrainsBold;
+  /*--color-text: #415466;*/
+  --color-text: #748CA3;
+  --color-dark: #000814;
+  /*--color-mid: #001D3D;*/
+  /*--color-mid: #182634;*/
+  --color-mid: #242C33;
+  --color-light: #003566;
+  --color-highlight-red: #F71735;
+  --color-highlight-blue: #41EAD4;
+  --color-b100: #1d232a;
+  --color-b200: #191e24;
+  --color-b300: #15191e;
+  --color-b400: #0f1318;
 }
 
 @font-face {
@@ -15,4 +28,3 @@
     font-family: JetBrainsBold;
     src: url("../assets/fonts/JetBrains/webfont/JetBrainsMono-Bold.woff2") format("woff2");
 }
-
