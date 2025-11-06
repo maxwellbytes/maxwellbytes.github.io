@@ -208,7 +208,7 @@
                     <div x-show="active_tab === 'projects'" class="p-4 _tabContent">
                         <p>This is my project page!</p>
                     </div>
-                    <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start">
+                    <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start overflow-y-scroll">
                         <div>
                             <h2 class="text-left text-4xl">Maxwell Brown</h2>
                             <h4 class="text-left text-2xl">hello@maxwellbrown.dev - 
@@ -222,13 +222,58 @@
                                     <span class="absolute left-0 bottom-0 w-0.5 h-0 bg-highlight-blue"></span>
                                 </a>
                             </h4>
-                            <br>
-                            <p>Computer Science senior graduating in December 2025 with hands-on experience building responsive web applications.
+                            <p class="pt-2 pb-2">Computer Science senior graduating in December 2025 with hands-on experience building responsive web applications.
                             Passionate about front-end development, problem-solving, and writing clean, efficient code that solves real problems.</p>
+                            <div class="pt-2">
+                                <h3 class="text-2xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Education</h3>
+                                <!-- <span  class="_education" @mouseover="highlightSection('._education')" @mouseout="unhighlightSection('._education')"> -->
+                                <span>
+                                    <h4 class="text-xl mt-3">Appalachian State University | Anticipated Grad Date: Dec 2025</h4>
+                                    <p class="font-jetbrainsItalic indent-8">Bachelor of Science - Computer Science - GPA: 3.56</p>
+                                    <ul class="indent-8">
+                                        <li>
+                                            Data Science Certificate
+                                        </li>
+                                    </ul>
+                                </span>
+                                <span>
+                                    <h4 class="text-xl mt-4">Relavent Course Work</h4>
+                                        <div class="grid grid-cols-2 gap-2 pt indent-8">
+                                            <p>Software Engineering</p>
+                                            <p>Client-side Web Development</p>
+                                            <p>Applied Machine Learning</p>
+                                            <p>Data Structures</p>
+                                            <p>Data Collection and Visualization</p>
+                                            <p>Server-side Web Development</p>
+                                        </div>
+                                </span>
+                                <h3 class="text-2xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Work Experience</h3>
+                                    <h4 class="text-xl mt-3">Freelance Software Engingeer | Apr 2024 - Present</h4>
+                                    <ul class="indent-8">
+                                        <li>
+                                            Built full-stack web applications using JavaScript, Node.js, and Express.js, focusing on clean UI design and efficient API integration
+                                        </li>
+                                        <li>
+                                            Created high-quality annotations for natural language processing (NLP) tasks
+                                        </li>
+                                        <li>
+                                            Developed small, functional projects in collaboration with AI tools, applying clean coding practices and problem-solving skills
+                                        </li>
+                                        <li>
+                                            Authored and validated example API calls and responses to improve model understanding of software workflows
+                                        </li>
+                                        <li>
+                                            Managed multiple client projects independently, ensuring timely delivery of products
+                                        </li>
+                                        <li>
+                                            Designed and tested datasets to evaluate AI model performance, focusing on code generation, reasoning accuracy, and language coherence
+                                        </li>
+                                    </ul>
+                            </div>
                         </div>
                         <div class="grow flex flex-row-reverse mr-2">
                             <a href="./assets/MaxwellBrownResume.pdf" download class="inline-flex items-center gap-2 bg-b300 hover:bg-b200 border-b400 text-sky-50
-                                px-4 py-2 rounded-sm shadow-sm mt-0.5">
+                                px-12 py-2 rounded-sm shadow-sm mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                                     stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-icon lucide-download">
                                     <path d="M12 15V3"/>

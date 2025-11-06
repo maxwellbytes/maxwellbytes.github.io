@@ -20,6 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
 // portfolioButton.textContent = 'Portfolio.exe';
 // portfolioButton.className = 'bg-b300 hover:bg-b200 text-white text-sm px-3 py-1 rounded transition-all duration-200';
 
+function highlightSection(className){
+    anime({
+        targets: className,
+        color: '#41EAD4',
+        duration: 500,
+        ease: 'easeInOutQuad'
+    })
+}
+
+function unhighlightSection(className){
+    anime({
+        targets: className,
+        color: '#FFFFFF',
+        duration: 500,
+        ease: 'easeInOutQuad'
+    })
+}
+
 function animateTabContent() {
     anime({
         targets: '._tabContent',

@@ -4,6 +4,7 @@
 @theme {
   --font-jetbrainsReg: JetBrainsReg;
   --font-jetbrainsBold: JetBrainsBold;
+  --font-jetbrainsItalic: JetBrainsItalic;
   /*--color-text: #415466;*/
   --color-text: #748CA3;
   --color-dark: #000814;
@@ -28,6 +29,11 @@
 @font-face {
     font-family: JetBrainsBold;
     src: url("../assets/fonts/JetBrains/webfont/JetBrainsMono-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: JetBrainsItalic;
+  src: url("../assets/fonts/JetBrains/webfont/JetBrainsMono-Italic.woff2");
 }
 
 ._tab {
