@@ -21,6 +21,10 @@
   --color-b400: #0f1318;
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none
+}
+
 @font-face {
     font-family: JetBrainsReg;
     src: url("../assets/fonts/JetBrains/webfont/JetBrainsMono-Regular.woff2") format("woff2");

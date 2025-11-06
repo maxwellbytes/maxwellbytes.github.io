@@ -110,20 +110,16 @@
                 </ul>
             </nav>
             <nav class="_mainContent w-full">
-                <div x-data="{ active_tab: 'home'}">
+                <div x-data="{ active_tab: 'about'}">
                     <ul class="list-style-none flex flex-row bg-b150">
-                        <li @click="active_tab = 'home'; animateTabContent()" :class="active_tab === 'home' ? '_activeTab' : ''" class="_tab">Home</li>
-                        <li @click="active_tab = 'about_me'; animateTabContent()" :class="active_tab === 'about_me' ? '_activeTab' : ''" class="_tab">About Me</li>
+                        <li @click="active_tab = 'about'; animateTabContent()" :class="active_tab === 'about' ? '_activeTab' : ''" class="_tab">About Me</li>
                         <li @click="active_tab = 'skills'; animateTabContent()" :class="active_tab === 'skills' ? '_activeTab' : ''" class="_tab">Skills</li>
                         <li @click="active_tab = 'projects'; animateTabContent()" :class="active_tab === 'projects' ? '_activeTab' : ''" class="_tab">Projects</li>
                         <li @click="active_tab = 'resume'; animateTabContent()" :class="active_tab === 'resume' ? '_activeTab' : ''" class="_tab">Resume</li>
                     </ul>
-                    <div x-show="active_tab === 'home'"  class="p-4 _tabContent">
-                        <p>Welcome to my portfolio</p>
-                    </div>
-                    <div x-show="active_tab === 'about_me'" class="p-4 _tabContent">
-                        <p>Hi there! I'm a soon-to-be Computer Science graduate with a passion for the creative side of coding. I love turning ideas into interactive projects
-                            and have developed a strong interest in front-end web development along the way.<p>
+                    <div x-show="active_tab === 'about'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto">
+                        <p>Hi there! Welcome to my portfolio website. I'm Maxwell Brown and I'm a CS senior with a passion for the creative side of coding. I love turning ideas into interactive projects
+                            and have developed a strong interest in front-end web development throughout my time in college.<p>
                         <br>
                         <p>Outside of class, I've worked as a freelance software developer, where I built small-scale projects ranging from static websites to desktop 
                             applications, developed and tested APIs, and contributed to software validation work based on detailed client criteria and project rubrics. 
@@ -138,11 +134,11 @@
                             I enjoy projects that let me combine problem-solving with creative design, whether that's developing unique web interfaces or 
                             bringing an idea to life in 3D.</p>
                     </div>
-                    <div x-show="active_tab === 'skills'" class="p-4 _tabContent">
-                        <section class="px-6 py-6">
+                    <div x-show="active_tab === 'skills'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto">
+                        <section class="px-6 py-6 object-contain">
                             <h2 class="text-2xl text-highlight-blue mb-6 tracking-wider">Built With</h2>
                             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-6">
-                                <div class="text-center">
+                                <div class="text-center object-scale-down">
                                     <svg class="_skills" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"/></svg>
                                     Javascript
                                 </div>
@@ -206,13 +202,13 @@
                             </div>
                         </section>
                     </div>
-                    <div x-show="active_tab === 'projects'" class="p-4 _tabContent">
+                    <div x-show="active_tab === 'projects'" class="p-4 _tabContent overflow-y-auto">
                         <p>This is my project page!</p>
                     </div>
-                    <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start overflow-y-auto h-full max-h-[calc(100vh-6rem)]">
-                        <div class="overflow-y-scroll pr-8">
-                            <h2 class="text-left text-4xl">Maxwell Brown</h2>
-                            <h4 class="text-left text-2xl">hello@maxwellbrown.dev - 
+                    <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start ">
+                        <div class="mr-2  flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                            <h2 class="text-left text-xl">Maxwell Brown</h2>
+                            <h4 class="text-left text-lg">hello@maxwellbrown.dev - 
                                 <a href="https://www.linkedin.com/in/maxwellhbrown/" target="_blank" rel="noopener noreferrer" id="linkedinLine"
                                 class="relative inline-block">
                                     LinkedIn
@@ -223,14 +219,12 @@
                                     <span class="absolute left-0 bottom-0 w-0.5 h-0 bg-highlight-blue"></span>
                                 </a>
                             </h4>
-                            <p class="pt-2 pb-2">Computer Science senior graduating in December 2025 with hands-on experience building responsive web applications.
-                            Passionate about front-end development, problem-solving, and writing clean, efficient code that solves real problems.</p>
-                            <div class="pt-2">
-                                <h3 class="text-2xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Education</h3>
+                            <div class="">
+                                <h3 class="text-xl mt-4 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Education</h3>
                                 <!-- <span  class="_education" @mouseover="highlightSection('._education')" @mouseout="unhighlightSection('._education')"> -->
                                 <!--wrap the other sections in spans if i want to bring back highlighting text on hover-->
                                 <span>
-                                    <h4 class="text-xl mt-3">Appalachian State University | Anticipated Grad Date: Dec 2025</h4>
+                                    <h4 class="text-lg mt-3">Appalachian State University | Anticipated Grad Date: Dec 2025</h4>
                                     <p class="font-jetbrainsItalic indent-8">Bachelor of Science - Computer Science - GPA: 3.56</p>
                                     <ul class="indent-8">
                                         <li>
@@ -239,7 +233,7 @@
                                     </ul>
                                 </span>
                                 <span>
-                                    <h4 class="text-xl mt-4">Relavent Course Work</h4>
+                                    <h4 class="text-lg mt-4">Relavent Course Work</h4>
                                         <div class="grid grid-cols-2 gap-2 pt indent-8">
                                             <p>Software Engineering</p>
                                             <p>Client-side Web Development</p>
@@ -250,8 +244,8 @@
                                         </div>
                                 </span>
                                 <span>
-                                    <h3 class="text-2xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Work Experience</h3>
-                                    <h4 class="text-xl mt-3">Freelance Software Engingeer | Apr 2024 - Present</h4>
+                                    <h3 class="text-xl mt-4 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Work Experience</h3>
+                                    <h4 class="text-lg mt-3">Freelance Software Engingeer | Apr 2024 - Present</h4>
                                     <ul class="indent-8">
                                         <li>
                                             Built full-stack web applications using JavaScript, Node.js, and Express.js, focusing on clean UI design and efficient API integration
@@ -274,8 +268,8 @@
                                     </ul>
                                 </span>
                                 <span>
-                                    <h3 class="text-2xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Community Involvement</h3>
-                                    <h4 class="text-xl mt-3">Appalachian State University's 2024 Annual Hackathon</h4>
+                                    <h3 class="text-xl pt-2 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Community Involvement</h3>
+                                    <h4 class="text-lg mt-3">Appalachian State University's 2024 Annual Hackathon</h4>
                                     <p>3rd place winner</p>
                                 </span>
                             </div>
