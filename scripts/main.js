@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const taskbarWindow = document.getElementById('taskbarWindows');
 //actually portfolio window, would need to change this if i add other windows
-const mainWindow = document.getElementById('window');
+//const mainWindow = document.getElementById('window');
 
 
 // const portfolioWindow = document.getElementById('window');
@@ -24,14 +24,14 @@ const mainWindow = document.getElementById('window');
 // portfolioButton.textContent = 'Portfolio.exe';
 // portfolioButton.className = 'bg-b300 hover:bg-b200 text-white text-sm px-3 py-1 rounded transition-all duration-200';
 
-function changeWindow(isMinimized){
-    if (isMinimized){
-        anime({
-            targets: mainWindow,
-            scale: 1.25
-        })
-    }
-}
+// function changeWindow(isMinimized){
+//     if (isMinimized){
+//         anime({
+//             targets: mainWindow,
+//             scale: 1.25
+//         })
+//     }
+// }
 
 function highlightSection(className){
     anime({

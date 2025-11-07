@@ -12,7 +12,7 @@
     <script src="./scripts/main.js"></script>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-  <body class="flex flex-col h-screen overflow-hidden">
+  <body class="flex flex-col h-screen overflow-hidden font-jetbrainsReg text-white">
     <!--
         Ideas/TODO:
             - Collapsable side panel that has the actual code files that I used
@@ -27,6 +27,7 @@
         Small test suite w/ jest
         lazy-loading/optimization
         ARIA roles + go over semantic tags
+        Put repeated styling for tab content into the _tabContent class
 
         Start bar w/ just icon, able to minimize the main window but that is it
             - remove code icon in sidebar, add code icon on desktop to pull up a new window
@@ -37,48 +38,55 @@
                 - create a mobile/small screen friendly layout
             remove the newlines for visibility
     -->
-    <main class="w-screen min-h-screen pb-10 font-jetbrainsReg bg-b100 text-white" id="window">
-        <div class="bg-b400 pt-2 pl-2 pb-2 pr-4 flex justify-between items-center h-10 _topBar">
-            <!--name-->
-            <div class="flex items-center text-highlight-blue">
-                <span id="nameHeader" class="select-none"></span>
-                <span id="cursorHeader" class="">|</span>
-            </div>
+        <div class="h-10 shrink-0">
+            <div class="bg-b400 pt-2 pl-2 pb-2 pr-4 flex justify-between items-center h-10 _topBar">
+                <!--name-->
+                <div class="flex items-center text-highlight-blue">
+                    <span id="nameHeader" class="select-none"></span>
+                    <span id="cursorHeader" class="">|</span>
+                </div>
 
-            <!--header icons -->
-            <div class="flex flex-row-reverse gap-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" class="lucide lucide-square-x-icon lucide-square-x stroke-sky-50">
-                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                    <path d="m15 9-6 6"/>
-                    <path d="m9 9 6 6"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" 
-                    stroke-linejoin="round" class="lucide lucide-panel-top-icon lucide-panel-top inline-block stroke-sky-50">
-                    <rect width="18" height="18" x="3" y="3" rx="2"/>
-                    <path d="M3 9h18"/>
-                </svg>
-                <div x-data="{ isMinimized: false }">
-                    <!--removed stroke=current color so the lines would fit better in vscode-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus stroke-sky-50" @click="isMinimized = !isMinimized; changeWindow(isMinimized)" :class="isMinimized === true ? '_minimized' : ''">
-                        <path d="M5 12h14"/>
+                <!--header icons -->
+                <div class="flex flex-row-reverse gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-square-x-icon lucide-square-x stroke-sky-50">
+                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                        <path d="m15 9-6 6"/>
+                        <path d="m9 9 6 6"/>
                     </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-panel-top-icon lucide-panel-top inline-block stroke-sky-50">
+                        <rect width="18" height="18" x="3" y="3" rx="2"/>
+                        <path d="M3 9h18"/>
+                    </svg>
+                    <div x-data="{ isMinimized: false }">
+                        <!--removed stroke=current color so the lines would fit better in vscode-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus stroke-sky-50" @click="isMinimized = !isMinimized; changeWindow(isMinimized)" :class="isMinimized === true ? '_minimized' : ''">
+                            <path d="M5 12h14"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="_bodyContent flex flex-row h-dvh">
+        
+        <div class="flex flex-1 min-h-0">
+            <div class="_bodyContent flex flex-row flex-1 min-h-0">
+            <!-- <div class="_bodyContent flex flex-row h-dvh"> -->
             <!--put nav inside sidebar?-->
-            <nav class="_sidebar flex flex-col bg-b300 pl-2 pr-2">
-                <ul class="list-style-none">
+            <!--<nav class="_sidebar flex flex-col bg-b300 pl-2 pr-2">-->
+                <nav class="shrink-0 bg-b300">
+                <ul class="list-style-none mx-2">
                     <li class="pt-2 pb-2 cursor-pointer">
+                        <a href="https://github.com/maxwellbytes/maxwellbytes.github.io" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-code-icon lucide-folder-code stroke-text">
                             <path d="M10 10.5 8 13l2 2.5"/>
                             <path d="m14 10.5 2 2.5-2 2.5"/>
                             <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/>
                         </svg>
+                        </a>
                     </li>
                     <li class="pt-2 pb-2 cursor-pointer">
                         <a href="https://www.linkedin.com/in/maxwellhbrown/" target="_blank" rel="noopener noreferrer">
@@ -100,16 +108,17 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="pt-2 pb-2 cursor-pointer">
+                    <!-- <li class="pt-2 pb-2 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail stroke-text">
                             <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
                             <rect x="2" y="4" width="20" height="16" rx="2"/>
                         </svg>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
-            <nav class="_mainContent w-full">
+            <!--<main class="_mainContent w-full">-->
+            <main class="flex-1 min-h-0 overflow-y-auto w-full">
                 <div x-data="{ active_tab: 'about'}">
                     <ul class="list-style-none flex flex-row bg-b150">
                         <li @click="active_tab = 'about'; animateTabContent()" :class="active_tab === 'about' ? '_activeTab' : ''" class="_tab">About Me</li>
@@ -117,7 +126,7 @@
                         <li @click="active_tab = 'projects'; animateTabContent()" :class="active_tab === 'projects' ? '_activeTab' : ''" class="_tab">Projects</li>
                         <li @click="active_tab = 'resume'; animateTabContent()" :class="active_tab === 'resume' ? '_activeTab' : ''" class="_tab">Resume</li>
                     </ul>
-                    <div x-show="active_tab === 'about'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto">
+                    <div x-show="active_tab === 'about'" class="p-4 _tabContent flex-1">
                         <p>Hi there! Welcome to my portfolio website. I'm Maxwell Brown and I'm a CS senior with a passion for the creative side of coding. I love turning ideas into interactive projects
                             and have developed a strong interest in front-end web development throughout my time in college.<p>
                         <br>
@@ -134,8 +143,8 @@
                             I enjoy projects that let me combine problem-solving with creative design, whether that's developing unique web interfaces or 
                             bringing an idea to life in 3D.</p>
                     </div>
-                    <div x-show="active_tab === 'skills'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto">
-                        <section class="px-6 py-6 object-contain">
+                    <div x-show="active_tab === 'skills'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto no-scrollbar [&::-webkit-scrollbar]:hidden">
+                        <section class="mb-4">
                             <h2 class="text-2xl text-highlight-blue mb-6 tracking-wider">Built With</h2>
                             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-6">
                                 <div class="text-center object-scale-down">
@@ -168,7 +177,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="px-8 py-6">
+                        <section>
                             <h2 class="text-2xl text-highlight-blue mb-6 tracking-wider">Other Skills</h2>
                             <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-6">
                                 <div class="text-center">
@@ -202,25 +211,26 @@
                             </div>
                         </section>
                     </div>
-                    <div x-show="active_tab === 'projects'" class="p-4 _tabContent overflow-y-auto">
+                    <div x-show="active_tab === 'projects'" class="p-4 _tabContent flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto no-scrollbar [&::-webkit-scrollbar]:hidden">
                         <p>This is my project page!</p>
                     </div>
                     <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start ">
-                        <div class="mr-2  flex-1 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                            <h2 class="text-left text-xl">Maxwell Brown</h2>
-                            <h4 class="text-left text-lg">hello@maxwellbrown.dev - 
+                        <div class="mr-2  grow-2 min-h-[300px] max-h-[calc(100vh-6rem)] overflow-y-auto no-scrollbar [&::-webkit-scrollbar]:hidden">
+                            <!-- <h2 class="text-left text-xl">Maxwell Brown</h2>
+                            <h4 class="text-left text-md">hello@maxwellbrown.dev - 
                                 <a href="https://www.linkedin.com/in/maxwellhbrown/" target="_blank" rel="noopener noreferrer" id="linkedinLine"
                                 class="relative inline-block">
                                     LinkedIn
                                     <!--top, right, bottom, left-->
+                                    <!--
                                     <span class="absolute left-0 top-0 h-0.5 w-0 bg-highlight-blue"></span>
                                     <span class="absolute right-0 top-0 w-0.5 h-0 bg-highlight-blue"></span>
                                     <span class="absolute right-0 bottom-0 h-0.5 w-0 bg-highlight-blue"></span>
                                     <span class="absolute left-0 bottom-0 w-0.5 h-0 bg-highlight-blue"></span>
                                 </a>
-                            </h4>
-                            <div class="">
-                                <h3 class="text-xl mt-4 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Education</h3>
+                            </h4> -->
+                            <div>
+                                <h3 class="text-xl text-highlight-blue font-jetbrainsBold border-b-3 border-double">Education</h3>
                                 <!-- <span  class="_education" @mouseover="highlightSection('._education')" @mouseout="unhighlightSection('._education')"> -->
                                 <!--wrap the other sections in spans if i want to bring back highlighting text on hover-->
                                 <span>
@@ -246,7 +256,7 @@
                                 <span>
                                     <h3 class="text-xl mt-4 text-highlight-blue font-jetbrainsBold border-b-3 border-double">Work Experience</h3>
                                     <h4 class="text-lg mt-3">Freelance Software Engingeer | Apr 2024 - Present</h4>
-                                    <ul class="indent-8">
+                                    <ul class="list-disc list-outside marker:text-white marker:content-['-'] pl-4 space-y-1">
                                         <li>
                                             Built full-stack web applications using JavaScript, Node.js, and Express.js, focusing on clean UI design and efficient API integration
                                         </li>
@@ -302,13 +312,14 @@
                     </div>
                     -->
                 </div>
-            </nav>
+            </main>
         </div>
-    </main>
-    <div class="_taskbar fixed bottom-0 left-0 w-full h-10 bg-b400 border-t border-highlight-blue flex items-center justify-between px-2 text-white z-50">
+    </div>
+    <!--<div class="_taskbar fixed bottom-0 left-0 w-full h-10 bg-b400 border-t border-highlight-blue flex items-center justify-between px-2 text-white z-50">-->
+    <div class="_taskbar h-10 fixed bottom-0 left-0 w-full bg-b400 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-2">
             <svg class="fill-white" height="25" width="25" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M122.5,34.031L0,245.001l122.5,210.968h245L490,245.001L367.5,34.031H122.5z M287.558,318.293h-85.116l-42.557-73.292 l42.557-73.292h85.116l42.557,73.292L287.558,318.293z"></path> </g> </g></svg>
-            <div id="taskbarWindows" class="flex items-center gap-2 ml-2">
+            <div id="taskbarWindows" class="flex items-center gap-2 ml-2"></div>
         </div>
     </div>
   </body>

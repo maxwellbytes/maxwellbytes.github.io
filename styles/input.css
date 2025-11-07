@@ -22,7 +22,7 @@
 }
 
 @utility no-scrollbar {
-  scrollbar-width: none
+  scrollbar-width: none;
 }
 
 @font-face {
