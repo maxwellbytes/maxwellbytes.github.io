@@ -20,6 +20,7 @@
   --color-activeTabText: #1A1F25;
   --color-taskbarBG: #F6F7F9;
   --color-highlight: #1F2457;
+  --color-mainBG: #a5cefd;
 }
 
 .dark {
@@ -35,6 +36,7 @@
   --color-activeTabText: white;
   --color-taskbarBG: #0f1318;
   --color-highlight: #41EAD4;
+  --color-mainBG: #121921;
 }
 
 @utility no-scrollbar {
