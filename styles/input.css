@@ -9,7 +9,7 @@
   --font-jetbrainsItalic: JetBrainsItalic;
   
   --color-teal: #00BFA6;
-  --color-headerBG: #D9DCDE;
+  --color-headerBG: #c9cfda;
   --color-headerText: #033030;
   --color-headerIcons: #55657D;
   --color-sbBG: #E9EDF2;
@@ -18,9 +18,9 @@
   --color-inactiveTabText: #687B94;
   --color-activeTabBG: white;
   --color-activeTabText: #1A1F25;
-  --color-taskbarBG: #F6F7F9;
+  --color-taskbarBG: #dee6fb;
   --color-highlight: #1F2457;
-  --color-mainBG: #a5cefd;
+  --color-mainBG: #f0f4fe;
 }
 
 .dark {

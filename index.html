@@ -44,7 +44,7 @@
         Currently working on:
             who knows https://i.kym-cdn.com/entries/icons/original/000/052/772/dog_closing_eyes_meme_cover.jpg
     -->
-    <!-- <div id="loadingScreen" class="fixed inset-0 bg-headerBG z-50 flex justify-start font-mono">
+    <div id="loadingScreen" class="fixed inset-0 bg-headerBG z-50 flex justify-start font-mono">
         <div class="text-left text-highlight ml-4 mt-4">
             <p>
                 <span>$ </span><span id="startup1"></span>
@@ -62,10 +62,10 @@
                 <span id="progressPercentage" class="ml-1">0%</span>
             </p>
         </div>
-    </div> -->
+    </div>
     <div id="mainWindow" class="flex flex-col flex-1 min-h-0">
         <div class="absolute inset-0 p-4 grid grid-cols-8 grid-rows-6 gap-4 pointer-events-none">
-            <div class="desktop-icon pointer-events-auto">
+            <div @click="openWindow()" class="desktop-icon pointer-events-auto w-fit h-fit">
                 <div class="flex items-center justify-center">
                     <svg class="stroke-highlight fill-highlight" xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#000000" viewBox="0 0 256 256"><path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40ZM216,200H40V88H216Z"></path></svg>
                 </div>
@@ -84,7 +84,7 @@
 
                 <!--header icons -->
                 <div class="flex flex-row-reverse gap-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                    <svg @click="closeWindow()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                         fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                         stroke-linejoin="round" class="lucide lucide-square-x-icon lucide-square-x stroke-headerIcons">
                         <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
@@ -248,7 +248,8 @@
                         </section>
                     </div>
                     <div x-show="active_tab === 'projects'" class="p-4 _tabContent">
-                        <p>Under Construction</p>
+                        <p>This website!</p>
+                        <p>[other projects to be added]</p>
                     </div>
                     <div x-show="active_tab === 'resume'" class="p-4 _tabContent flex justify-between items-start">
                         <div class="mr-2">
@@ -342,7 +343,7 @@
     </div>
     </div>
     <!--<div class="_taskbar fixed bottom-0 left-0 w-full h-10 bg-b400 border-t border-highlight-blue flex items-center justify-between px-2 text-white z-50">-->
-    <div class="_taskbar h-10 w-full bg-headerBG flex items-center justify-between shrink-0 z-10">
+    <div class="_taskbar h-10 w-full bg-taskbarBG flex items-center justify-between shrink-0 z-10">
         <div class="flex items-center gap-2 mx-2">
             <button 
                 @click="darkMode = !darkMode"
