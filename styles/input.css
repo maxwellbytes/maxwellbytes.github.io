@@ -79,6 +79,15 @@
 ._skills {
   margin-bottom: 1em;
 }
+/* will use in the future, currently not used
+._blogHeader {
+  font-size: x-large;
+  color: var(--color-highlight);
+  font-family: JetBrainsBold;
+  border-bottom: 3px;
+  border-style: double;
+}
+*/
 
 @keyframes blink {
   50% {opacity: 0;};
