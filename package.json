@@ -1,27 +1,28 @@
 {
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.16",
-    "tabbyjs": "^12.0.3",
-    "tailwindcss": "^4.1.16"
-  },
-  "name": "maxwellbrown.dev.github.io",
-  "version": "1.0.0",
-  "description": "Personal portfolio website",
-  "main": "main.js",
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node main.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maxvantisio/maxwellbrown.dev.github.io.git"
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-draggable": "^4.7.0"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maxvantisio/maxwellbrown.dev.github.io/issues"
-  },
-  "homepage": "https://github.com/maxvantisio/maxwellbrown.dev.github.io#readme",
   "devDependencies": {
-    "daisyui": "^5.3.10"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
