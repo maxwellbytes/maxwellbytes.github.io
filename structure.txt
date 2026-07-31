@@ -1,0 +1,40 @@
+app/
+    layout.tsx  -    root layout: wraps everything in <DesktopProvider>
+    page.tsx    -    renders <Desktop /> - thin/not logic heavy (i think), just composition
+    globals.css -    CSS variable definitions per theme
+
+components/
+    desktop/
+        Desktop.tsx
+        DesktopIcon.tsx
+        Taskbar.tsx
+        Window.tsx
+        WindowManager.tsx
+
+
+app/
+  layout.tsx              # root layout: wraps everything in <DesktopProvider>
+  page.tsx                # renders <Desktop /> — thin, just composition
+  globals.css              # CSS variable definitions per theme
+
+components/
+  desktop/
+    Desktop.tsx             # lays out icons, taskbar, open windows
+    DesktopIcon.tsx
+    Taskbar.tsx              # reads open/minimized windows from context
+    Window.tsx                # generic draggable window shell (title bar, controls)
+    WindowManager.tsx        # renders all open Window instances from state
+
+  apps/                      # the "content" that goes inside a Window
+    ResumeApp.tsx
+    ProjectsApp.tsx
+    AboutApp.tsx
+    SettingsApp.tsx           # theme picker lives here
+
+context/
+  DesktopContext.tsx         # windows[], openWindow(), closeWindow(), minimizeWindow(), focusWindow()
+  ThemeContext.tsx            # theme, setTheme() (or fold into DesktopContext)
+
+lib/
+  themes.ts                   # theme definitions/tokens
+  types.ts                    # Window type: { id, title, appType, isMinimized, zIndex, position }
