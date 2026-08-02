@@ -5,8 +5,10 @@ import TaskBar from '@/components/desktop/TaskBar';
 import { TASKBAR_HEIGHT } from './lib/constants';
 
 export default function Page() {
+  const currBG = '/Texturelabs_Sky_172XL.jpg' //swap this out later or hook it up w/ a global state variable somewhere
   return (
-    <main className="relative h-screen w-screen overflow-hidden bg-neutral-800">
+    <main className="relative h-screen w-screen overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('${currBG}')` }}>
       <div className="relative w-full overflow-hidden" style={{ height: `calc(100vh - ${TASKBAR_HEIGHT}px)`}}>
         <div className="p-4 flex flex-col gap-4">
           <DesktopIcon appType="resume" label="Resume" />

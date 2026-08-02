@@ -5,10 +5,18 @@ import { Window } from '@/components/desktop/Window'; //??
 
 export default function TaskBar() {
   const { windows, focusedId, focusWindow, minimizeWindow } = useDesktop();
+  
+  //TODO: create a switchable variable for the settings app to change the theme? Currently just using hardcoded values
+  var currTheme = 'water'
+   //backgroundColor: 'rgba(253, 253, 253, .8)', backdropFilter: 'blur(8px)'
+   //backgroundColor: currTheme === 'water' ? '#071e22' : '#000000'
+
   return (
     <>
-      <nav className="fixed bottom-0 left-0 right-0 bg-amber-600 flex items-center z-50" style={{ height: TASKBAR_HEIGHT }}>
-        <button className="bg-sky-700 h-full w-32">Start</button>
+      <nav className="fixed bottom-0 left-0 right-0 bg-amber-600 flex items-center z-50 text-[#202830]" 
+      style={{ height: TASKBAR_HEIGHT, backgroundColor: 'rgba(253, 253, 253, .4)', backdropFilter: 'blur(8px)' }}
+      >
+        <button className="h-full w-32" style={{ backgroundColor: 'rgba(224, 234, 244, 0.8)', backdropFilter: 'blur(4px)' }}>Start</button>
         {windows.map((w) => (
           <button key={w.id}
           onClick={() => {

@@ -55,7 +55,7 @@ export function Window({
     >
       <div
         ref={nodeRef}
-        className={`window border-2 border-black bg-teal shadow-lg flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
+        className={`window shadow-lg rounded-xl flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
         style={{ zIndex, width, height }}
         onMouseDown={onFocus}
       >
