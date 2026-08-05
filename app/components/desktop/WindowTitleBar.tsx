@@ -11,8 +11,7 @@ interface WindowTitleBarProps {
 
 export function WindowTitleBar({ title, onClose, onMinimize, onMaximize }: WindowTitleBarProps) {
   return (
-    <div className="title-bar  flex items-center justify-between text-[#202830] px-2 py-1 cursor-move"
-    style={{backgroundColor: 'rgba(224, 234, 244, 0.8)', backdropFilter: 'blur(4px) '}}>
+    <div className="title-bar  flex items-center justify-between rounded-t-lg text-text px-2 py-1 cursor-move bg-crust">
       <span className="text-sm font-medium truncate">{title}</span>
       <div className="controls flex gap-1">
         <button onClick={onMinimize} aria-label="Minimize" className="w-5 h-5 leading-none">_</button>

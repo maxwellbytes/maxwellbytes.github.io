@@ -1,4 +1,4 @@
-export type AppType = 'resume' | 'projects' | 'about' | 'settings';
+export type AppType = 'resume' | 'projects' | 'about' | 'settings' | "welcome";
 
 //holds each open window (object) in an array.
 //opening the same window twice (like resume) will make 2 objects with the same appType but diff IDs

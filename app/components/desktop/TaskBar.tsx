@@ -13,8 +13,9 @@ export default function TaskBar() {
 
   return (
     <>
-      <nav className="fixed bottom-0 left-0 right-0 bg-amber-600 flex items-center z-50 text-[#202830]" 
-      style={{ height: TASKBAR_HEIGHT, backgroundColor: 'rgba(253, 253, 253, .4)', backdropFilter: 'blur(8px)' }}
+    <div className="fixed left-1/2 bottom-0 z-50 w-full max-w-xl -translate-x-1/2 px-4 pb-2 pointer-events-none">
+      <nav className="bg-amber-600 gap-1 z-50 text-[#202830]" 
+      style={{ height: TASKBAR_HEIGHT, backgroundColor: 'rgb(180, 190, 254, .4)', backdropFilter: 'blur(8px)' }}
       >
         <button className="h-full w-32" style={{ backgroundColor: 'rgba(224, 234, 244, 0.8)', backdropFilter: 'blur(4px)' }}>Start</button>
         {windows.map((w) => (
@@ -31,6 +32,7 @@ export default function TaskBar() {
           </button>
         ))}
       </nav>
+      </div>
     </>
   );
 }

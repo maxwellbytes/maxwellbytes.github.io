@@ -1,6 +1,6 @@
 // components/desktop/window/Window.tsx
 'use client';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { WindowTitleBar } from './WindowTitleBar';
 import { WindowBody } from './WindowBody';
@@ -41,6 +41,7 @@ export function Window({
   onMove,
 }: WindowProps) {
   const nodeRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
     <Draggable
@@ -55,7 +56,7 @@ export function Window({
     >
       <div
         ref={nodeRef}
-        className={`window shadow-lg rounded-xl flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
+        className={`window border-4 border-crust rounded-xl overflow-hidden flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
         style={{ zIndex, width, height }}
         onMouseDown={onFocus}
       >

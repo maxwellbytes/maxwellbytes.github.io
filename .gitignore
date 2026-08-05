@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# images
+public/about-svgrepo-com.svg
+public/portfolio_website_background.png
+public/project-new-svgrepo-com.svg
+public/resume-4-svgrepo-com.svg

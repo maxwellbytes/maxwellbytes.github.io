@@ -1,6 +1,7 @@
 'use client' //is needed??
 import { createContext, useContext, useReducer, ReactNode } from 'react';
 import { WindowState, AppType } from '@/lib/types';
+import { APP_DEFAULT_BOUNDS } from '@/lib/constants';
 
 //discriminated union - is typescript saying "an Action is 1 of these 5 shapes, and the type field tells you which one"
 
@@ -43,14 +44,23 @@ function reducer(state: State, action: Action): State {
                     nextZIndex: state.nextZIndex + 1
                 };
             }
+            const defaultBounds = APP_DEFAULT_BOUNDS[action.appType] ?? { width: 480, height: 360 };
+            const viewportWidth =
+                typeof window !== 'undefined' ? window.innerWidth : 1280;
+            const viewportHeight = 
+                typeof window !== 'undefined' ? window.innerHeight : 900;
+            
+            const width = Math.min(defaultBounds.width, Math.floor(viewportWidth * 0.9));
+            const height = Math.min(defaultBounds.height, Math.floor(viewportHeight * 0.8));
+            
             const newWindow: WindowState = {
                 id: `${action.appType}-${Date.now()}`,
                 appType: action.appType,
                 title: action.title,
                 x: 400 + state.windows.length * 24,
                 y: -150 + state.windows.length * 24,
-                width: 480,
-                height: 360,
+                width,
+                height,
                 zIndex: state.nextZIndex,
                 isMinimized: false,
                 isMaximized: false
