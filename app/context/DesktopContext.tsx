@@ -131,10 +131,32 @@ function reducer(state: State, action: Action): State {
 
 const DesktopContext = createContext<ReturnType<typeof useDesktopValue> | null>(null);
 
+
+
 function useDesktopValue() {
-    const [state, dispatch] = useReducer(reducer, { windows: [], nextZIndex: 1 });
+    
+    const initialState: State = {
+    windows: [
+    {
+        id: 'welcome-1',
+      appType: 'welcome',
+      title: 'Welcome',
+      x: 400,
+      y: -150,
+      width: APP_DEFAULT_BOUNDS.welcome.width,
+      height: APP_DEFAULT_BOUNDS.welcome.height,
+      zIndex: 1,
+      isMinimized: false,
+      isMaximized: false,
+    }
+    ],
+    nextZIndex: 2,
+};
+const [state, dispatch] = useReducer(reducer, initialState);
+//const [state, dispatch] = useReducer(reducer, { windows: [], nextZIndex: 1 });
 
     return {
+
         windows: state.windows,
         focusedId: state.windows.reduce(
             (top, w) => (w.zIndex > (top?.zIndex ?? -1) ? w : top),

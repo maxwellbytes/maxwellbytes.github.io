@@ -3,7 +3,7 @@ import { DesktopProvider } from "@/context/DesktopContext";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html>
+    <html data-theme="dark-blue">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
       </head>

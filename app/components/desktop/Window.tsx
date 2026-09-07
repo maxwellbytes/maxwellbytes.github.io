@@ -23,6 +23,8 @@ interface WindowProps {
   onMove: (x: number, y: number) => void;
 }
 
+//border-surface1 shadow-xl/30
+
 export function Window({
   id,
   title,
@@ -48,6 +50,7 @@ export function Window({
       nodeRef={nodeRef}
       key={isMaximized ? 'maximized' : 'normal'}
       handle=".title-bar"
+      cancel=".controls"
       position={isMaximized ? { x: 0, y: 0} : { x, y }}
       onStart={onFocus}
       onStop={(e, data) => onMove(data.x, data.y)}
@@ -56,9 +59,10 @@ export function Window({
     >
       <div
         ref={nodeRef}
-        className={`window border-4 border-crust rounded-xl overflow-hidden flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
+        className={`scrollbar-thumb-sky window border border-surface1 shadow-xl/30 rounded-md resize overflow-hidden flex flex-col ${isMaximized ? 'fixed inset-0 w-screen h-screen' : 'absolute'}`}
         style={{ zIndex, width, height }}
         onMouseDown={onFocus}
+        onClick={onFocus}
       >
         <WindowTitleBar title={title} onClose={onClose} onMinimize={onMinimize} onMaximize={onMaximize}/>
         <WindowBody>{children}</WindowBody>

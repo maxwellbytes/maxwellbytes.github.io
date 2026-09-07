@@ -11,7 +11,7 @@ interface WindowBodyProps {
 
 export function WindowBody({ children, onMeasured } : WindowBodyProps) {
   return (
-    <div className="window-body p-3 overflow-auto flex-1 min-h-0 bg-mantle">
+    <div className="window-body overflow-auto flex-1 min-h-0 bg-base">
       {children}
     </div>
   )

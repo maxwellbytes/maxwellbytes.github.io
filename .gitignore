@@ -26,6 +26,7 @@ notes.txt
 # misc
 .DS_Store
 *.pem
+*.mp4
 
 # debug
 npm-debug.log*
@@ -44,6 +45,7 @@ yarn-error.log*
 next-env.d.ts
 
 # images
+# should probably change this
 public/about-svgrepo-com.svg
 public/portfolio_website_background.png
 public/project-new-svgrepo-com.svg

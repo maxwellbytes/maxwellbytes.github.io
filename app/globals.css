@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
-@theme {
+/* @theme {
   --color-base: #1e1e2e;
   --color-mantle: #181825;
   --color-crust: #11111b;
@@ -18,6 +20,14 @@
   --color-text: #cdd6f4;
   --color-subtext1: #bac2de;
   --color-subtext0: #a6adc8;
+  --color-overlay2: #9399b2;
+  --color-overlay1: #7f849c;
+  --color-overlay0: #6c7086;
+  --color-surface2: #585b70;
+  --color-surface1: #45475a;
+  --color-surface0: #313244;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +35,177 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+/* themes.css */
+/* :root,
+[data-theme="light"] {
+  --color-base: #eff1f5;
+  --color-mantle: #e6e9ef;
+  --color-crust: #dce0e8;
+  --color-mauve: #8839ef;
+  --color-red: #d20f39;
+  --color-maroon: #e64553;
+  --color-peach: #fe640b;
+  --color-yellow: #df8e1d;
+  --color-green: #40a02b;
+  --color-teal: #179299;
+  --color-sky: #04a5e5;
+  --color-sapphire: #209fb5;
+  --color-blue: #1e66f5;
+  --color-lavender: #7287fd;
+  --color-text: #4c4f69;
+  --color-subtext1: #5c5f77;
+  --color-subtext0: #6c6f85;
+  --color-overlay2: #7c7f93;
+  --color-overlay1: #8c8fa1;
+  --color-overlay0: #9ca0b0;
+  --color-surface2: #acb0be;
+  --color-surface1: #bcc0cc;
+  --color-surface0: #ccd0da;
 }
+
+[data-theme="dark"] {
+  --color-base: #1e1e2e;
+  --color-mantle: #181825;
+  --color-crust: #11111b;
+  --color-mauve: #cba6f7;
+  --color-red: #f38ba8;
+  --color-maroon: #eba0ac;
+  --color-peach: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-teal: #94e2d5;
+  --color-sky: #89dceb;
+  --color-sapphire: #74c7ec;
+  --color-blue: #89b4fa;
+  --color-lavender: #b4befe;
+  --color-text: #cdd6f4;
+  --color-subtext1: #bac2de;
+  --color-subtext0: #a6adc8;
+  --color-overlay2: #9399b2;
+  --color-overlay1: #7f849c;
+  --color-overlay0: #6c7086;
+  --color-surface2: #585b70;
+  --color-surface1: #45475a;
+  --color-surface0: #313244;
+} */
+
+@theme {
+  --color-base: var(--base);
+  --color-mantle: var(--mantle);
+  --color-crust: var(--crust);
+  --color-accent-main: var(--accent-main);
+  --color-accent-second: var(--accent-second);
+  --color-text: var(--text);
+  --color-subtext1: var(--subtext1);
+  --color-subtext0: var(--subtext2);
+  --color-overlay2: var(--overlay2);
+  --color-overlay1: var(--overlay1);
+  --color-overlay0: var(--overlay0);
+  --bg-image: var(--bg-image)
+}
+
+[data-theme="light-teal"] {
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+  --accent-main: #179299;
+  --accent-second: #fe640b;
+  --text: #4c4f69;
+  --subtext1: #5c5f77;
+  --subtext0: #6c6f85;
+  --overlay2: #7c7f93;
+  --overlay1: #8c8fa1;
+  --overlay0: #9ca0b0;
+  --bg-image: url("/backgrounds/portfolio_website_background_light_teal.png")
+}
+
+[data-theme="light-blue"] {
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+  --accent-main: #04a5e5;
+  --accent-second: #e64553;
+  --text: #4c4f69;
+  --subtext1: #5c5f77;
+  --subtext0: #6c6f85;
+  --overlay2: #7c7f93;
+  --overlay1: #8c8fa1;
+  --overlay0: #9ca0b0;
+  --bg-image: url("/backgrounds/portfolio_website_background_light_blue.png")
+}
+
+[data-theme="dark-teal"] {
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --accent-main: #94e2d5;
+  --accent-second: #fab387;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --bg-image: url("/backgrounds/portfolio_website_background_dark_teal.png")
+}
+
+[data-theme="dark-blue"] {
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --accent-main: #89dceb;
+  --accent-second: #eba0ac;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --bg-image: url("/backgrounds/portfolio_website_background_dark_blue.png")
+}
+
+/* --base: #eff1f5;
+  --mantle: 
+  --crust: 
+  --accent-main: 
+  --accent-second: 
+  --text: 
+  --subtext1: 
+  --subtext0: 
+  --overlay2: 
+  --overlay1: 
+  --overlay0:  */
+/* 
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: var(--bg-primary);
+  --color-brand-text: var(--text-primary);
+}
+
+/* Default Scheme (Scheme A) */
+/* :root, [data-theme="scheme-a"] {
+  --bg-primary: #ffffff;
+  --text-primary: #0f172a;
+}
+
+[data-theme="scheme-b"] {
+  --bg-primary: #0f172a;
+  --text-primary: #f8fafc;
+}
+
+
+[data-theme="nord"] {
+  --color-bg: 46 52 64;
+  --color-surface: 59 66 82;
+  --color-surface-hover: 67 76 94;
+  --color-text: 236 239 244;
+  --color-text-muted: 216 222 233;
+  --color-accent: 136 192 208;
+  --color-border: 76 86 106;
+} */
 
 body {
   background: var(--background);

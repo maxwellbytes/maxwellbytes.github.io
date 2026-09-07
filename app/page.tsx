@@ -17,7 +17,6 @@ export default function Page() {
           <DesktopIcon appType="projects" label="Projects" />
           <DesktopIcon appType="about" label="About Me" />
           <DesktopIcon appType="settings" label="Settings" />
-          <DesktopIcon appType="welcome" label="Welcome" />
         </div>
         <WindowManager />
       </div>
